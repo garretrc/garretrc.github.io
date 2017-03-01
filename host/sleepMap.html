@@ -86,8 +86,8 @@ var e=Math.floor(t)+.5-this.jdEpoch,r=Math.floor((e-Math.floor((e+366)/1461))/36
                 function resizePlot() {
                     var bb = gd.getBoundingClientRect();
                     Plotly.relayout(gd, {
-                        width: 1200,
-                        height: 1000
+                        width: bb.width,
+                        height: bb.height
                     });
                 }
 
