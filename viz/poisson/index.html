@@ -39,7 +39,7 @@ for (n in 1:25) {
     }
     print(ggplot() + geom_histogram(aes(x = means), binwidth = 1/n, 
         color = "white", fill = "darkred") + ggtitle(paste0("Poisson(2) Sampling Distribution (n=", 
-        as.character(n), ")")) + xlim(-1, 6))
+        as.character(n), ")")) + xlim(-1, 6) + ylim(0, 29000))
 }
 ## R version 3.2.3 (2015-12-10)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
