@@ -96,7 +96,7 @@ class Graph
         var toProcess = [];
         toProcess.push(node);
         var overflow = 0;
-        while(toProcess.length != 0 && overflow < 30) {
+        while(toProcess.length != 0 && overflow < 100000000000) {
         	overflow = overflow + 1;
             var current = toProcess.pop();
             console.log(toProcess.length);
