@@ -72,7 +72,7 @@ class Graph
         var toProcess = [];
         toProcess.push(node);
         var overflow = 0;
-        while(toProcess.length != 0 && overflow < 30) {
+        while(toProcess.length != 0 && overflow < 10000) {
             overflow = overflow + 1;
             var current = toProcess.pop();
             console.log(toProcess.length);
@@ -199,7 +199,7 @@ var p1 = new Player("Bob", "#D35400");
 var p2 = new Player("Rob", "#27AE60");
 var players = [p1, p2];
 
-/*var testGraph = new Graph(players);
+var testGraph = new Graph(players);
 var node1 = new Node(200, 200, 40);
 var node2 = new Node(200, 400, 40);
 var node3 = new Node(400, 200, 40);
@@ -221,12 +221,23 @@ node4.addNeighbor(node3);
 testGraph.addNode(node1);
 testGraph.addNode(node2);
 testGraph.addNode(node3);
-testGraph.addNode(node4);*/
+testGraph.addNode(node4);
+
+var testGraph = new SquareGraph(7,players);
+testGraph.rmNode(testGraph.nodes[32]);
+//testGraph.rmNode(testGraph.nodes[31]);
+testGraph.rmNode(testGraph.nodes[30]);
+//testGraph.rmNode(testGraph.nodes[25]);
+testGraph.rmNode(testGraph.nodes[24]);
+//testGraph.rmNode(testGraph.nodes[23]);
+testGraph.rmNode(testGraph.nodes[18]);
+//testGraph.rmNode(testGraph.nodes[17]);
+testGraph.rmNode(testGraph.nodes[16]);
 
 
-
-
-var testGraph = new SquareGraph(3, players);
+//var testGraph = new DiamondGraph(5,players);
+//testGraph.rmNode(testGraph.nodes[6]);
+//var testGraph = new SquareGraph(3, players);
 
 
 function drawBox(xPos, yPos, xSize, ySize, color) {
