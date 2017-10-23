@@ -179,10 +179,12 @@ class Player
 var empty = new Player("empty", "#444444");
 
 
-
-var p1 = new Player("Bob", "#D35400");
+var p1 = new Player("John","#8A2BE3");
+var p3 = new Player("Robbie","1919ff");
+var p4 = new Player("Bob", "#D35400");
 var p2 = new Player("Rob", "#27AE60");
-var players = [p1, p2];
+
+var players = [p1, p2,p3,p4];
 
 /*var testGraph = new Graph(players);
 var node1 = new Node(200, 200, 40);
