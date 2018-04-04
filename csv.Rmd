@@ -1,0 +1,26 @@
+---
+title: "Reading CSVs quickly in R"
+output: html_document
+---
+<style type="text/css">
+body {
+    background-color: #F1DFCD;
+    
+}
+h1.title {
+  font-size: 50px;
+  font-weight: bold;
+  color: #B93838;
+}
+</style>
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The basic function for reading CSV's in R is read.csv.
+
+For big datasets, this often does not run or is incredibly slow.
+
+So, we will look into speedier options!
+
+Here is the R script showing how to use fread and read_csv: <u><a style="color: #b93838" href="http://garretrc.github.io/host/readingCSVs.R">readingCSVs.R</a></u>
