@@ -1,0 +1,29 @@
+function [integral] = simp(a,b,n0)
+integral = zeroes(2,1);
+
+sumend = f(a) + f(b);
+sumodd=0;
+sumeven=0;
+
+if(n0 > 2)
+  h = (b-a)/n0;
+  for i=2:2:n0-2
+    sumeven = sumeven + f(a+i*h);
+  end
+end
+
+for i=1:2
+  n=n0;
+  h=(b-a)/n;
+  sumeven = sumeven+sumodd;
+  sumodd=0;
+  for k=1:2:n-1
+    sumodd = sumodd + f(a+k*h);
+  end
+  integral(i) = h*(sumend + 4*sumodd + 2*sumeven)/3;
+  n0=n0+2;
+end
+
+function f_val = f(x)
+
+f_val = exp(x^2);

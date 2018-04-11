@@ -18,12 +18,12 @@ knitr::opts_chunk$set(echo = TRUE)
 setwd("C:/Users/garretrc/garretrc")
 ```
  <img src="https://garretrc.github.io/images/linkedin.jpg" width="160" height="160" border="5" alt="Picture of Robert" />
-        <img src="https://garretrc.github.io/images/show.jpg" width="225" border="5" alt="Picture of DataScrubs" />
-        <img src="https://garretrc.github.io/images/bike.jpg" width="160" height="160" border="5" alt="Picture of Bike + Robert" />
+ <img src="https://garretrc.github.io/images/show.jpg" width="225" border="5" alt="Picture of DataScrubs" />
+ <img src="https://garretrc.github.io/images/bike.jpg" width="160" height="160" border="5" alt="Picture of Bike + Robert" />
 
 ##<span style="color:#B93838">About me</span>
 
-I am currently a third year student at Miami University of Ohio, where I major in Mathematics & Statistics with a Predictive Analytics Co-Major and minor in Computer Science. I plan to graduate in 2019 and seek graduate education in Statistics. While working towards my degree, I am employed as a Data Science Intern for IBM. I work with a team from Research Triangle Park, NC to integrate cognitive tools into blockchain-based business networks.  
+I am a third year student at Miami University (Ohio), where I study Mathematics & Statistics, Predictive Analytics, and Computer Science. I plan to graduate in 2019 and am in the first steps of applying to graduate programs. While working towards my degree, I am employed as a Data Science Intern for IBM. I work with a team from Research Triangle Park, NC to integrate cognitive tools into blockchain-based business networks.  
 
 ##<span style="color:#B93838">Projects</span>
 
@@ -37,8 +37,13 @@ I am currently a third year student at Miami University of Ohio, where I major i
 
 **2017 PittBusiness Analytics Case Competition:** I recently traveled to Pittsburgh to compete in this competition with some of my Senior Classmates at Miami. We created a <u><a style="color: #b93838" href="https://garretrc.github.io/host/pittsburgh2017.pdf">data-centric process</a></u> for determining market potential of our product.
 
+##<span style="color:#B93838">For Fun</span>
+
+**Nodesplosion:** A game playable on any connected, undirected graph based on the premise that a node can hold as many dots as its number of edges and explodes its dots into its neighbors upon surpassing that capacity. Made as a fun project along with Bob Krueger, Robbie Ritchie and John Biggs. Playable on my website at <u><a style="color: #b93838" href="https://garretrc.github.io/splode">garretrc.github.io/splode</a></u>.
+
+**DataFest Inspiration:** A quick set of visualizations and projects to serve as inspiration for data competitions on my <u><a style="color: #b93838" href="https://www.pinterest.com/garrettr223/datafest/">Pinterest</a></u>.
+
 ##<span style="color:#B93838">Links</span>
 <a style="color: #b93838" href="https://www.linkedin.com/in/garretrc">
 <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_myprofile_160x33.png" width="160" height="33" border="0" alt="View Robert Garrett's profile on LinkedIn">
 </a>
-

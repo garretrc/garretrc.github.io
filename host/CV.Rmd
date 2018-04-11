@@ -1,0 +1,93 @@
+---
+title: "CV"
+author: "Robert C. Garrett"
+email: garretrc@miamioh.edu
+output:
+  pdf_document:
+    latex_engine: pdflatex
+    template: C:/Users/garretrc/Documents/svm-latex-cv.tex
+  html_document: default
+fontfamily: mathpazo
+fontfamilyoptions: sc, osf
+fontsize: 11pt
+geometry: margin=1in
+jobtitle: Statistics Student
+keywords: R Markdown, academic CV, template
+linkcolor: blue
+fontawesome: yes
+phone: +330 998 5710
+address: 10120 Crows Nest Cove, Aurora OH 44202
+updated: no
+urlcolor: blue
+web: garretrc.github.io
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\vspace{4mm}
+
+**Education and Coursework**  
+
+*Miami University* Oxford, OH \hfill Graduating May 2019  
+B.S. in Mathematics & Statistics, Predictive Analytics.  
+Minors in Computer Science and Operations Research.
+
+*Statistics Courses*  
+Regression Modeling, Probability, Regression Analysis, Statistical Programming, Statistical Learning, Data Visualization, Time Series
+
+*Mathematics Courses*  
+Linear Algebra, Calculus 1-3, Differential Equations, Abstract Algebra, Real Analysis, Numerical Analysis, Optimization
+
+*Computer Science Courses*  
+Object Oriented Programming, Data Structures, Database Systems, Algorithms
+
+***
+
+**Research Experiences**
+
+*Government Section on Statistics Data Challenge* \hfill January-July 2016  
+Scraped crash safety rating data from NHTSA and IIHS.
+Created and cleaned a database for the project.
+Worked with two other students to present work at the Joint Statistical meetings and submit a paper to *Computational Statistics*.  
+
+*Miami University DataFest* \hfill May 2016  
+Assembled and led a team of freshman classesmates to compete in Miami Universities first annual DataFest.
+Manipulated and made visualizations with 3GB of Ticketmaster Data.
+Won Best in Show award for our network plots and ad suggestion algorithms.  
+
+*Government Section on Statistics Data Challenge* \hfill January-July 2017  
+Utilized BLS data to analyze consumer expenditures throughout the Great Recession.
+Presented our findings at the Joint Statistical Meetings.
+Won 3rd place by modeling the budget behaviors of U.S. consumers. In the process of submitting my findings to *Computational Statistics*.  
+
+*Miami University DataFest* \hfill May 2017  
+- Worked with user experience data from Expedia to investigate the behavior of "browsers" vs. "buyers"  
+- Used alluvial diagrams to plot user journeys and suggest courses of action to entice long time users to book a hotel   
+- Won third place for our presentation    
+
+
+***
+
+**Publications**
+
+***
+
+**Skills**
+
+*Proficient in:*  
+R (ggplot2, dplyr, data.table, shiny, stringr, various statistical learning packages), SAS, SPSS Modeler, IBM Bluemix, Watson Machine Learning, Java, Javascript  
+
+*Data Science skills:*  
+Web scraping and API calling, Data Visualization, Dashboard Building, Web Development, Predictive Modeling
+
+***
+
+**Employment**
+
+*IBM* Research Triangle Park, NC \hfill May 2017-Present  
+Integrated cognitive tools and blockchain networks and automated quarterly incident report summaries while working with R, Watson Machine Learning, and Hyperledger Fabric.
+
+*Undergraduate Associate* Miami University \hfill January 2018-Present  
+Worked with Dr. Karsten Maurer as an Undergraduate Associate for his STA 467 Statistical Learning course. Helped students with learning and troubleshooting R and provided office hours to help with the term project.
