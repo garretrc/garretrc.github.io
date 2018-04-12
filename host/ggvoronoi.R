@@ -28,7 +28,7 @@ USarea = map_data("usa") %>% filter(region == "main")
 #grab some quick data on us cities from https://simplemaps.com/data/us-cities
 
 #takes ~10 seconds
-cities = read_csv("https://simplemaps.com/static/data/us-cities/uscitiesv1.4.csv")
+cities = read.csv("https://simplemaps.com/static/data/us-cities/uscitiesv1.4.csv")
 
 #grab only states in the continental US
 cities = cities %>%
