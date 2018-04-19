@@ -1,5 +1,6 @@
 devtools::install_github("garretrc/ggvoronoi")
 library(ggvoronoi) #also loads dplyr, ggplot2, sp, deldir
+library(tidyverse)
 
 #start with some simulated data and drawing the path only
 x=sample(1:100,50)
@@ -21,6 +22,16 @@ ggplot()+
   scale_fill_gradient(low="white",high="red")+
   geom_point(aes(x,y),alpha=.2)
 
+#and now finally we can restrict the area where the voronoi diagram is drawn with the outline argument
+
+circle = data.frame(x = 50*(1+cos(seq(0, 2*pi, length.out = 1000))), 
+                    y = 50*(1+sin(seq(0, 2*pi, length.out = 1000))))
+
+ggplot()+
+  voronoi_polygon(x,y,fill=fill,outline=circle)+
+  scale_fill_gradient(low="white",high="red")
+
+
 #Now for an actual use case, maps!
 
 USarea = map_data("usa") %>% filter(region == "main")
@@ -41,31 +52,37 @@ pop = cities %>% group_by(state_id) %>% arrange(-population) %>% slice(1)
 #plot the cities
 ggplot()+
   geom_path(data = USarea, aes(x=long,y=lat))+
-  geom_point(data = pop, aes(x=long,y=lat))
+  geom_point(data = pop, aes(x=long,y=lat))+
+  coord_map()
 
-#now plot the voronoi regions
-ggplot()+
-  voronoi_polygon(x=pop$long, y=pop$lat, fill=log(pop$population))+
-  geom_path(data=USarea,aes(x=long,y=lat))+
-  geom_point(data=pop,aes(x=long,y=lat))+
-  scale_fill_gradient(low="white",high="darkgreen",guide=F)
+#Before we use the outline argument of voronoi_polygon, we need to make sure:
+#First column is x/longitude
+#Second column is y/latitude
+#pieces of the map are denoted in the group column
+names(USarea)
 
-#Looks good... but theres one last issue. Voronoi Diagrams don't inherently like borders
-#time for our last R function
-
-#We create a "cookie cutter" shape of the US
-?mask_map
-ggplot()+
-  geom_polygon(data=mask_map(USarea),aes(x=long,y=lat))
-
-#now throw this on top of our chloropleth!
+#now plot the voronoi regions with outline as the USarea dataframe
 map = ggplot()+
-  voronoi_polygon(x=pop$long, y=pop$lat, fill=log(pop$population))+
-  geom_polygon(data=mask_map(USarea),aes(x=long,y=lat),fill="white",color=NA)+
-  geom_path(data=USarea,aes(x=long,y=lat))+
+  voronoi_polygon(x=pop$long, y=pop$lat, fill=log(pop$population),outline = USarea)+
+  geom_path(data=USarea,aes(x=long,y=lat,group=group))+
   geom_point(data=pop,aes(x=long,y=lat))+
-  scale_fill_gradient(low="white",high="darkgreen",guide=F)
+  scale_fill_gradient(low="white",high="darkgreen",guide=F)+
+  coord_map()
 map
 
 #And if you have ggthemes installed you can theme_map it!
 map+ggthemes::theme_map()
+
+#Along with this, we can use voronoi_polygons to see the population of every us city at the same time!
+#This makes voronoi diagrams a powerful tool for interpolation
+
+#need to make sure to remove duplicate points!
+all_cities = cities %>% filter(!is.na(population)) %>% distinct(long,lat,.keep_all = T) 
+
+#caution: this might take a minute!
+big.map = ggplot()+
+  voronoi_polygon(x=all_cities$long,y=all_cities$lat,fill=log(all_cities$population),outline=USarea)+
+  geom_path(data=USarea,aes(x=long,y=lat,group = group))+
+  scale_fill_gradient(low="white",high="darkgreen",guide=F)+
+  coord_quickmap()
+big.map
