@@ -1,25 +1,27 @@
+devtools::install_github("garretrc/ggvoronoi")
 library(ggvoronoi)
+library(tidyverse)
 
 ####Example 1: Voronoi Diagram Simulation####
 
-#start with some simulated data and drawing the path only
-x=sample(1:100,50)
-y=sample(1:100,50)
-fill = sqrt((x-50)^2 + (y-50)^2) #distance form the center
+#start with some simulated data,keep n at 100 to start
+n=5000
+x=sample(1:n,n/2)
+y=sample(1:n,n)
+fill = sqrt((x-n/2)^2 + (y-n/2)^2) #distance form the center
 points = data.frame(x=x,y=y,fill=fill)
 
 #ggvoronoi allows us to draw voronoi diagram heatmaps.
 #What does this mean? 
 #a Voronoi Diagram draws the nearest neighbor regions around a set of points
 #and by specifying a fill argument we can turn that into a heatmap!
-ggplot(points)+
-  geom_voronoi(aes(x,y,fill=fill))+
-  theme_minimal()
+ggplot(points,aes(x,y))+
+  geom_voronoi(aes(fill=fill))
 
-#or we can draw only the region boundaries!
-ggplot(points)+
-  geom_path(aes(x,y),stat="voronoi")+
-  theme_minimal()
+#or we can draw the points with the region boundaries!
+ggplot(points,aes(x,y))+
+  geom_path(stat="voronoi")+
+  geom_point()
 
 #these plots rely on our newly created ggplot stat, stat_voronoi
 #stat_voronoi allows us to use the functions in the deldir
@@ -35,109 +37,87 @@ ggplot(points)+
 #optional column "group"
 #Or you can feed it any spatial polygons dataframe!
 
-circle = data.frame(x = 50*(1+cos(seq(0, 2*pi, length.out = 1000))), 
-                    y = 50*(1+sin(seq(0, 2*pi, length.out = 1000))),
-                    group=rep(1,1000))
+circle = data.frame(x = (n/2)*(1+cos(seq(0, 2*pi, length.out = 2500))), 
+                    y = (n/2)*(1+sin(seq(0, 2*pi, length.out = 2500))),
+                    group=rep(1,2500))
 
 ggplot(data=points, aes(x=x, y=y, fill=fill)) + 
-  geom_voronoi(outline = circle)+
-  theme_minimal()
+  geom_voronoi(outline = circle,color="black",size=.05)
 
 #And with more knowlege of ggplot we can add more:
-ggplot(points)+
-  geom_voronoi(aes(x=x,y=y,fill=fill),outline=circle)+
-  scale_fill_gradient(low="white",high="darkred",guide=F)+
-  geom_point(aes(x,y))+
-  theme_minimal()
+ggplot(points,aes(x,y))+
+  geom_voronoi(aes(fill=fill),outline=circle)+
+  scale_fill_gradient(low="#4dffb8",high="black",guide=F)+
+  theme_void()+
+  coord_fixed()
 
+#If you found this example interesting, go back up and set n=5000 and run these again!
+#Make sure to re-run the circle data if you do this
+
+#Now these circles look pretty, but what are some actual applications?
 
 ####Example 2: Oxford Bikes Dataset####
 
 #For this example, we'll be using the locations of each bike rack in Oxford, Ohio
+#Note that ggvoronoi at the moment is limited to euclidean distance calculations
+#As such, using longitude and latitude will result in approximate Voronoi regions,
+#But with high sample size or a small area on the globe (such as one small town),
+#ggvoronoi still produces a useful result!
+bikes = read.csv("http://garretrc.github.io/host/oxford_bikes.csv",stringsAsFactors = F)
 
+#first build the base map
+library(ggmap)
+library(ggthemes)
 
+ox_map = get_map(location = c(-84.7398373,39.507306),zoom = 15)
+bounds = as.numeric(attr(ox_map,"bb"))
 
+map=
+  ggmap(ox_map,base_layer = ggplot(data=bikes,aes(x,y)))+ #map of oxford
+  xlim(-85,-84)+ylim(39,40)+                              #adjust plot limits
+  coord_map(ylim=bounds[c(1,3)],xlim=bounds[c(2,4)])      #adjust plot zoom
 
+#Now lets take a look!
+map + geom_path(stat="voronoi",alpha=.085,size=1)+
+      geom_point(color="blue",size=.9)
+    
+#Here we can visually see each bike rack along with the Voronoi Region.
+#So, given a bike rack, the region surrounding it is the area in Oxford for
+#which that is the closest bike rack. 
+#But what if we want to utilize this, not just look at it?
 
+#First, we can build a voronoi diagram as a SpatialPolygonsDataFrame
+#The voronoi_polygon function takes in:
+#data: a data frame (will need at least 2 numeric columns)
+#x: dataframe column name or index for the x variable
+#y: dataframe column name or index for the y variable
+#outline: a data.frame or SpatialPolygonsDataFrame witha  map outline
 
+ox_diagram = voronoi_polygon(bikes,x="x",y="y")
 
-####North America Example####
+#now, lets take a point of interest in Oxford, say Mac & Joes, a popular restuarant/bar.
+#Google Maps can give me directions there, but there is no place to chain up a bike.
+#So, lets use the diagram!
 
-#This example will be using multiple maps, and is a bit more complicated!
-us_cont = map_data(map = "usa")
-mexico = map_data("world", "mexico")
+library(sp)
+#create a point with Starbucks' location
+mac_joes = SpatialPointsDataFrame(cbind(long=-84.7418,lat=39.5101),
+                                  data=data.frame(name="Mac & Joes"))
 
-outlines = rbind(us_cont, mexico)
-outlines = outlines %>% 
-  mutate(group = paste(region, subregion, group, sep = '.')) %>% # Need 'group' variable to be a unique variable now, wasn't from rbinding multiple together
-  filter(long < 100) # Just to ignore that little Alaskan island that is on other side of 180/-180 line
+#overlay the point on our voronoi diagram
+mac_joes %over% ox_diagram
 
-cities = world.cities %>% filter(country.etc %in% c('USA', 'Mexico') & pop > 100000)
+#Let's plot the map again.
+#First, plot he voronoi regions using the SpatialPolygonsDataFrame
+#Next, zoom into the area of interest (Uptown Oxford)
+#Then, plot Mac & Joes with a red point
+#Find the closest bike rack and drop a blue point
+#Lastly, plot the rest of the racks for visual comparison
+map + geom_path(data=fortify_voronoi(ox_diagram),aes(x,y,group=group),alpha=.1,size=1)+
+      coord_map(xlim=c(-84.747,-84.737),ylim=c(39.5075,39.515))+
+      geom_point(data=data.frame(mac_joes),aes(long,lat),color="red",size=4)+
+      geom_point(data=mac_joes %over% ox_diagram,aes(x,y),color="blue",size=4)+
+      geom_point(size=2)
 
-ggplot() + 
-  geom_voronoi(data=cities, 
-               aes(long, lat, fill = log(pop)),
-               outline = outlines)+
-  scale_fill_gradient(high="darkgreen",low="gray90")+
-  geom_path(data=outlines, 
-            aes(x=long,y=lat,group=group))+
-  theme_minimal()+
-  coord_map(projection = "gilbert")
-
-
-####To be finished####
-
-#Now for an actual use case, maps!
-
-USarea = map_data("usa") %>% filter(region == "main")
-
-#grab some quick data on us cities from https://simplemaps.com/data/us-cities
-
-#takes ~10 seconds
-cities = read.csv("https://simplemaps.com/static/data/us-cities/uscitiesv1.4.csv")
-
-#grab only states in the continental US
-cities = cities %>%
-  filter(!(state_name %in% c("Alaska","Hawaii","Puerto Rico"))) %>%
-  mutate(long=lng) %>% dplyr::select(-lng) %>% filter(lat>20)
-
-#grab highest population sity in each state
-pop = cities %>% group_by(state_id) %>% arrange(-population) %>% slice(1)
-
-#plot the cities
-ggplot()+
-  geom_path(data = USarea, aes(x=long,y=lat))+
-  geom_point(data = pop, aes(x=long,y=lat))+
-  coord_map()
-
-#Before we use the outline argument of voronoi_polygon, we need to make sure:
-#First column is x/longitude
-#Second column is y/latitude
-#pieces of the map are denoted in the group column
-names(USarea)
-
-#now plot the voronoi regions with outline as the USarea dataframe
-map = ggplot()+
-  voronoi_polygon(x=pop$long, y=pop$lat, fill=log(pop$population),outline = USarea)+
-  geom_path(data=USarea,aes(x=long,y=lat,group=group))+
-  geom_point(data=pop,aes(x=long,y=lat))+
-  scale_fill_gradient(low="white",high="darkgreen",guide=F)+
-  coord_map()
-map
-
-#And if you have ggthemes installed you can theme_map it!
-map+ggthemes::theme_map()
-
-#Along with this, we can use voronoi_polygons to see the population of every us city at the same time!
-#This makes voronoi diagrams a powerful tool for interpolation
-
-#need to make sure to remove duplicate points!
-all_cities = cities %>% filter(!is.na(population)) %>% distinct(long,lat,.keep_all = T) 
-
-#caution: this might take a minute!
-big.map = ggplot()+
-  voronoi_polygon(x=all_cities$long,y=all_cities$lat,fill=log(all_cities$population),outline=USarea)+
-  geom_path(data=USarea,aes(x=long,y=lat,group = group))+
-  scale_fill_gradient(low="white",high="darkgreen",guide=F)+
-  coord_quickmap()
-big.map
+#So, we can see if you're headed to Mac & Joe's for lunch you're better off
+#using the bike rack across high street than the one on South Poplar
