@@ -24,18 +24,17 @@ ggplot(points,aes(x,y))+
   geom_point()
 
 #these plots rely on our newly created ggplot stat, stat_voronoi
-#stat_voronoi allows us to use the functions in the deldir
-#package to visualize as well are more easily manipulate voronoi diagrams
+#stat_voronoi allows us to use the functions in the deldir package
+#to visualize as well are more easily manipulate voronoi diagrams
 #You can use stat_voronoi as its own layer, use it with geom_path or geom_polygon,
 #or use our geom_voronoi function for convenience
 
-
-#But what if we want the diagram drawn in a predefined region? deldir doesn't help with this
+#But what if we want the diagram drawn in a pre-defined region? deldir doesn't help with this
 #the outline argument can take any dataframe with the following structure:
 #first column is x/longitude
 #second column is y/latitude
 #optional column "group"
-#Or you can feed it any spatial polygons dataframe!
+#Or you can feed it any SpatialPolygonsDataFrame!
 
 circle = data.frame(x = (n/2)*(1+cos(seq(0, 2*pi, length.out = 2500))), 
                     y = (n/2)*(1+sin(seq(0, 2*pi, length.out = 2500))),
@@ -44,7 +43,7 @@ circle = data.frame(x = (n/2)*(1+cos(seq(0, 2*pi, length.out = 2500))),
 ggplot(data=points, aes(x=x, y=y, fill=fill)) + 
   geom_voronoi(outline = circle,color="black",size=.05)
 
-#And with more knowlege of ggplot we can add more:
+#And with more knowledge of ggplot2 we can add more:
 ggplot(points,aes(x,y))+
   geom_voronoi(aes(fill=fill),outline=circle)+
   scale_fill_gradient(low="#4dffb8",high="black",guide=F)+
@@ -59,10 +58,10 @@ ggplot(points,aes(x,y))+
 ####Example 2: Oxford Bikes Dataset####
 
 #For this example, we'll be using the locations of each bike rack in Oxford, Ohio
-#Note that ggvoronoi at the moment is limited to euclidean distance calculations
+#Note that ggvoronoi at the moment is limited to euclidean distance calculations.
 #As such, using longitude and latitude will result in approximate Voronoi regions,
 #But with high sample size or a small area on the globe (such as one small town),
-#ggvoronoi still produces a useful result!
+#ggvoronoi still produces a useful (and near-exact) result!
 bikes = read.csv("http://garretrc.github.io/host/oxford_bikes.csv",stringsAsFactors = F)
 
 #first build the base map
@@ -100,12 +99,13 @@ ox_diagram = voronoi_polygon(bikes,x="x",y="y")
 #So, lets use the diagram!
 
 library(sp)
-#create a point with Starbucks' location
+#create a point with Mac & Joes' location
 mac_joes = SpatialPointsDataFrame(cbind(long=-84.7418,lat=39.5101),
                                   data=data.frame(name="Mac & Joes"))
 
 #overlay the point on our voronoi diagram
 mac_joes %over% ox_diagram
+#nd there we have the coordinates of the closest bike rack to Mac & Joes!
 
 #Let's plot the map again.
 #First, plot he voronoi regions using the SpatialPolygonsDataFrame
@@ -119,5 +119,5 @@ map + geom_path(data=fortify_voronoi(ox_diagram),aes(x,y,group=group),alpha=.1,s
       geom_point(data=mac_joes %over% ox_diagram,aes(x,y),color="blue",size=4)+
       geom_point(size=2)
 
-#So, we can see if you're headed to Mac & Joe's for lunch you're better off
-#using the bike rack across high street than the one on South Poplar
+#So, we can see if you're headed to Mac & Joes for lunch you're better off
+#using the bike rack across High Street than the one on South Poplar
