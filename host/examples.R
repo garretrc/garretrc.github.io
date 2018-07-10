@@ -4,7 +4,7 @@ library(tidyverse)
 
 ####Example 1: Voronoi Diagram Simulation####
 
-#start with some simulated data,keep n at 100 to start
+#start with some simulated data, keep n at 100 to start
 n=5000
 x=sample(1:n,n/2)
 y=sample(1:n,n)
