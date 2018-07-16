@@ -28,7 +28,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 \vspace{4mm}
 
-**Education and Coursework**  
+**EDUCATION**  
 
 *Miami University* Oxford, OH \hfill Graduating May 2019  
 B.S. in Mathematics & Statistics, Predictive Analytics.  
@@ -45,49 +45,103 @@ Object Oriented Programming, Data Structures, Database Systems, Algorithms
 
 ***
 
-**Research Experiences**
+**RESEARCH EXPERIENCES**
 
-*Government Section on Statistics Data Challenge* \hfill January-July 2016  
-Scraped crash safety rating data from NHTSA and IIHS.
-Created and cleaned a database for the project.
-Worked with two other students to present work at the Joint Statistical meetings and submit a paper to *Computational Statistics*.  
+*Miami University DataFest* \hfill May 2018
 
-*Miami University DataFest* \hfill May 2016  
-Assembled and led a team of freshman classesmates to compete in Miami Universities first annual DataFest.
-Manipulated and made visualizations with 3GB of Ticketmaster Data.
-Won Best in Show award for our network plots and ad suggestion algorithms.  
+- Merged Indeed.com and US Census data to quantify labor surplus/deficit
+
+- Created code for Voronoi diagram heatmaps to visualize the data at the city level
+
+- Won first place for our reccomedation for Amazon's new headquarters
+
 
 *Government Section on Statistics Data Challenge* \hfill January-July 2017  
-Utilized BLS data to analyze consumer expenditures throughout the Great Recession.
-Presented our findings at the Joint Statistical Meetings.
-Won 3rd place by modeling the budget behaviors of U.S. consumers. In the process of submitting my findings to *Computational Statistics*.  
+
+- Utilized BLS data to analyze consumer expenditures throughout the Great Recession
+
+- Presented our findings at the Joint Statistical Meetings
+
+- Won 3rd place for our model of budget behaviors of U.S. consumers
+
 
 *Miami University DataFest* \hfill May 2017  
+
 - Worked with user experience data from Expedia to investigate the behavior of "browsers" vs. "buyers"  
+
 - Used alluvial diagrams to plot user journeys and suggest courses of action to entice long time users to book a hotel   
+
 - Won third place for our presentation    
 
 
+*Government Section on Statistics Data Challenge* \hfill January-July 2016  
+
+- Scraped crash safety rating data from NHTSA and IIHS
+
+- Created and cleaned a database for the project
+
+- Worked with two other students to present work at the Joint Statistical Meetings 
+
+- Submitted our work to *Computational Statistics*  
+
+
+*Miami University DataFest* \hfill May 2016  
+
+- Assembled a team of freshman classmates to compete in Miami University's first annual DataFest
+
+- Manipulated and visualized 3GB of Ticketmaster Data
+
+- Won Best in Show award for our network plots and ad suggestion algorithm  
+
+
 ***
 
-**Publications**
+**PUBLICATIONS**
+
+**Papers**
+
+*An analysis of crash-safety ratings and the true assessment of injuries by vehicle* Computational Statistics, (accepted based a satisfactory minor revision)
+
+Garrett, R. C. and Fisher, T. J.. 2017. An Analysis of Consumer Budgeting and the Great Recession. In 2017 JSM Proceedings. Alexandria, VA: American Statistical Association.
+
+**R packages**
+
+Garrett, R. C., Nar, A., Fisher, T. J.. (2013).  ggvoronoi: Voronoi Diagrams and Heatmaps with 'ggplot2'. R package
 
 ***
 
-**Skills**
 
-*Proficient in:*  
-R (ggplot2, dplyr, data.table, shiny, stringr, various statistical learning packages), SAS, SPSS Modeler, IBM Bluemix, Watson Machine Learning, Java, Javascript  
+**EMPLOYMENT**
 
-*Data Science skills:*  
-Web scraping and API calling, Data Visualization, Dashboard Building, Web Development, Predictive Modeling
+*Cincinnati Children's Hospital* Department of Biostatistics and Epidemiology \hfill May 2018-Present
 
-***
+As part of CCHMC's Summer Undergraduate Research Fellowship I worked with two seperate studies:
 
-**Employment**
+- Cincinnati Childhood Allergy and Air Pollution Study (CCAAPS)
 
-*IBM* Research Triangle Park, NC \hfill May 2017-Present  
-Integrated cognitive tools and blockchain networks and automated quarterly incident report summaries while working with R, Watson Machine Learning, and Hyperledger Fabric.
+    + Compared the effectiveness and efficiency of Voronoi diagrams vs. square rasters in interpolating Random Forest predictions over the Greater Cincinnati area
+    
+    + Used various R spatial analysis packages, including sp, raster, rgdal and ggvoronoi to complete the analyses
 
-*Undergraduate Associate* Miami University \hfill January 2018-Present  
-Worked with Dr. Karsten Maurer as an Undergraduate Associate for his STA 467 Statistical Learning course. Helped students with learning and troubleshooting R and provided office hours to help with the term project.
+- Pediatric Obesity Weight Evaluation Registry (POWER)
+
+    + Aggregated and visualized quarterly data on the progess of Pediatric Obesity patients at 30+ hospitals in the US
+
+    + Working to evaluate the effect of latitude on Vitamin D deficiencies in Pediatric Obesity patients
+    
+    + Used SAS programming for data processing and R packages ggplot2, shiny, and plotly for visualization
+
+
+*IBM* Research Triangle Park, NC \hfill May 2017-May 2018  
+
+- Integrated cognitive tools such as Watson Machine Learning, SPSS modeler, and R into blockchain networks in order to provide real-time analysis to users
+
+- Automated quarterly factory incident report summaries in order to better inform the troubleshooting process
+
+*Undergraduate Associate* Miami University \hfill January 2018-May 2018
+
+- Worked with Dr. Karsten Maurer as an Undergraduate Associate for his STA 467 Statistical Learning course
+
+    + Helped students with learning and troubleshooting R code for predictive modeling
+
+    + Provided office hours to help with the term project, using machine learning algorithms, variable selection, and model ensembling to predict basketball statistics
