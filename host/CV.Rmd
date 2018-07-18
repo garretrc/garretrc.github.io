@@ -35,7 +35,7 @@ B.S. in Mathematics & Statistics, Predictive Analytics.
 Minors in Computer Science and Operations Research.
 
 *Statistics Courses*  
-Regression Modeling, Probability, Regression Analysis, Statistical Programming, Statistical Learning, Data Visualization, Time Series
+Introduction to Statistical Modeling, Probability, Regression Analysis, Statistical Programming, Statistical Learning, Data Visualization, Inferential Statistics, Time Series
 
 *Mathematics Courses*  
 Linear Algebra, Calculus 1-3, Differential Equations, Abstract Algebra, Real Analysis, Numerical Analysis, Optimization
@@ -45,54 +45,58 @@ Object Oriented Programming, Data Structures, Database Systems, Algorithms
 
 ***
 
-**RESEARCH EXPERIENCES**
 
-*Miami University DataFest* \hfill May 2018
+**FIELD EXPERIENCE**
 
-- Merged Indeed.com and US Census data to quantify labor surplus/deficit
+*Cincinnati Children's Hospital* Department of Biostatistics and Epidemiology \hfill May 2018-Present
 
-- Created code for Voronoi diagram heatmaps to visualize the data at the city level
+- Cincinnati Childhood Allergy and Air Pollution Study (CCAAPS)
 
-- Won first place for our reccomedation for Amazon's new headquarters
+    + Compared the effectiveness and efficiency of Voronoi diagrams vs. square rasters in interpolating Random Forest predictions over the Greater Cincinnati area
 
+- Pediatric Obesity Weight Evaluation Registry (POWER)
 
-*Government Section on Statistics Data Challenge* \hfill January-July 2017  
+    + Aggregated and visualized quarterly data on the progess of Pediatric Obesity patients at 30+ hospitals in the US
 
-- Utilized BLS data to analyze consumer expenditures throughout the Great Recession
+    + Working to evaluate the effect of latitude on Vitamin D deficiencies in Pediatric Obesity patients
+    
+*IBM* Research Triangle Park, NC \hfill May 2017-May 2018  
 
-- Presented our findings at the Joint Statistical Meetings
+- Integrated cognitive tools such as Watson Machine Learning, SPSS modeler, and R into blockchain networks in order to provide real-time analysis to users
 
-- Won 3rd place for our model of budget behaviors of U.S. consumers
+*Undergraduate Associate* Miami University \hfill January 2018-May 2018
 
+- STA 467: Statistical Learning *Dr. Karsten Maurer*
 
-*Miami University DataFest* \hfill May 2017  
+    + Held office hours to help guide the term project (predicting basketball statistics using various ensembles of machine learning algorithms in R)
 
-- Worked with user experience data from Expedia to investigate the behavior of "browsers" vs. "buyers"  
+\newpage
 
-- Used alluvial diagrams to plot user journeys and suggest courses of action to entice long time users to book a hotel   
+**RESEARCH EXPERIENCE**
 
-- Won third place for our presentation    
+*Government Section on Statistics Data Challenge* American Statistical Association
 
+- 2017 Joint Statistical Meetings, *Presenter and Third Place winner*
 
-*Government Section on Statistics Data Challenge* \hfill January-July 2016  
+    + Utilized BLS data to analyze consumer expenditures throughout the Great Recession and predict future budgeting habits
 
-- Scraped crash safety rating data from NHTSA and IIHS
+- 2016 Joint Statistical Meetings, *Team Member*
 
-- Created and cleaned a database for the project
+    + Scraped crash safety rating data from NHTSA and IIHS to create a database for the project
 
-- Worked with two other students to present work at the Joint Statistical Meetings 
+*ASA DataFest*
 
-- Submitted our work to *Computational Statistics*  
+- 2018 Miami University, *First Place*
 
+    + Merged Indeed.com and US Census data to visualize labor surplus/deficit in the technology sector using Voronoi diagram heatmaps
 
-*Miami University DataFest* \hfill May 2016  
+- 2017 Miami University, *Third Place*
 
-- Assembled a team of freshman classmates to compete in Miami University's first annual DataFest
+    + Worked with Expedia data to indentify behavior corresponding to users who ultimately book a trip rather than just browse the website
 
-- Manipulated and visualized 3GB of Ticketmaster Data
+- 2016 Miami University, *First Place*
 
-- Won Best in Show award for our network plots and ad suggestion algorithm  
-
+    + Manipulated and visualized 3GB of Ticketmaster data to create an ad suggestion algorithm
 
 ***
 
@@ -106,42 +110,10 @@ Garrett, R. C. and Fisher, T. J.. 2017. An Analysis of Consumer Budgeting and th
 
 **R packages**
 
-Garrett, R. C., Nar, A., Fisher, T. J.. (2013).  ggvoronoi: Voronoi Diagrams and Heatmaps with 'ggplot2'. R package
+Garrett, R. C., Nar, A., Fisher, T. J.. 2018.  ggvoronoi: Voronoi Diagrams and Heatmaps with 'ggplot2'. R package
 
 ***
 
+**AWARDS AND HONORS**
 
-**EMPLOYMENT**
-
-*Cincinnati Children's Hospital* Department of Biostatistics and Epidemiology \hfill May 2018-Present
-
-As part of CCHMC's Summer Undergraduate Research Fellowship I worked with two seperate studies:
-
-- Cincinnati Childhood Allergy and Air Pollution Study (CCAAPS)
-
-    + Compared the effectiveness and efficiency of Voronoi diagrams vs. square rasters in interpolating Random Forest predictions over the Greater Cincinnati area
-    
-    + Used various R spatial analysis packages, including sp, raster, rgdal and ggvoronoi to complete the analyses
-
-- Pediatric Obesity Weight Evaluation Registry (POWER)
-
-    + Aggregated and visualized quarterly data on the progess of Pediatric Obesity patients at 30+ hospitals in the US
-
-    + Working to evaluate the effect of latitude on Vitamin D deficiencies in Pediatric Obesity patients
-    
-    + Used SAS programming for data processing and R packages ggplot2, shiny, and plotly for visualization
-
-
-*IBM* Research Triangle Park, NC \hfill May 2017-May 2018  
-
-- Integrated cognitive tools such as Watson Machine Learning, SPSS modeler, and R into blockchain networks in order to provide real-time analysis to users
-
-- Automated quarterly factory incident report summaries in order to better inform the troubleshooting process
-
-*Undergraduate Associate* Miami University \hfill January 2018-May 2018
-
-- Worked with Dr. Karsten Maurer as an Undergraduate Associate for his STA 467 Statistical Learning course
-
-    + Helped students with learning and troubleshooting R code for predictive modeling
-
-    + Provided office hours to help with the term project, using machine learning algorithms, variable selection, and model ensembling to predict basketball statistics
+University Academic Scholars Program (2015-2018), Dr. Donald C Weber Memorial Scholarship (2017 and 2018), Eric E Erickson Memorial Scholarship (2018), EY scholarship (2017), President's List (Fall 16, Spring 17, Fall 17), Dean's List (Fall 15, Spring 15, Spring 18)
