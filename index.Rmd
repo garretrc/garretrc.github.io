@@ -21,11 +21,11 @@ setwd("C:/Users/garretrc/garretrc")
  <img src="https://garretrc.github.io/images/show.jpg" width="225" border="5" alt="Picture of DataScrubs" />
  <img src="https://garretrc.github.io/images/bike.jpg" width="160" height="160" border="5" alt="Picture of Bike + Robert" />
 
-##<span style="color:#B93838">About me</span>
+## <span style="color:#B93838">About me</span>
 
 I am a third year student at Miami University (Ohio), where I study Mathematics & Statistics, Predictive Analytics, and Computer Science. I plan to graduate in 2019 and am in the first steps of applying to graduate programs. While working towards my degree, I am employed as a Data Science Intern for IBM. I work with a team from Research Triangle Park, NC to integrate cognitive tools into blockchain-based business networks.  
 
-##<span style="color:#B93838">Academic Projects</span>
+## <span style="color:#B93838">Academic Projects</span>
 
 **2016 GSS Data Challenge:** Starting January 2016, I worked with a team to scrape, wrangle and visualize data for car accidents (GES National Automotive Sampling System) and crash safety ratings (From the NHTSA and IIHS). <u><a style="color: #b93838" href="https://garretrc.github.io/host/gssPaper.pdf">paper</a></u> and <u><a style="color: #b93838" href="http://dataviz.miamioh.edu/nhtsaGesAnalysis/">R Shiny App</a></u> that was presented at the 2016 Joint Statistical Meetings. We are currently working on modeling probabilities of injuries in order to prepare our work to be submitted to *Computational Statistics*.
 
@@ -39,7 +39,7 @@ I am a third year student at Miami University (Ohio), where I study Mathematics 
 
 **2018 DataFest at Miami University:** My team recently placed first in Miami University's 2018 DataFest with our analysis of Indeed.com's job listing data. Using regional information to link the dataset to US Census Bureau data, we were able to create a metric for talent/job listing imbalances in US metropolitan areas. See our full presentation <u><a style="color: #b93838" href="https://garretrc.github.io/host/ANOVAdatafest.pdf">here</a></u>, and check out our ggvoronoi package for some tools we developed during the competition!
 
-##<span style="color:#B93838">Personal Projects</span>
+## <span style="color:#B93838">Personal Projects</span>
 
 **Nodesplosion:** A game playable on any connected, undirected graph based on the premise that a node can hold as many dots as its number of edges and explodes its dots into its neighbors upon surpassing that capacity. Made as a fun project along with Bob Krueger, Robbie Ritchie and John Biggs. Playable on my website at <u><a style="color: #b93838" href="https://garretrc.github.io/splode">garretrc.github.io/splode</a></u>.
 
@@ -49,7 +49,7 @@ I am a third year student at Miami University (Ohio), where I study Mathematics 
 
 
 
-##<span style="color:#B93838">Links</span>
+## <span style="color:#B93838">Links</span>
 <a style="color: #b93838" href="https://www.linkedin.com/in/garretrc">
 <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_myprofile_160x33.png" width="160" height="33" border="0" alt="View Robert Garrett's profile on LinkedIn">
 </a>
