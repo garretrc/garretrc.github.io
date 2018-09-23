@@ -9,7 +9,7 @@ output:
   html_document: default
 fontfamily: mathpazo
 fontfamilyoptions: sc, osf
-fontsize: 11pt
+fontsize: 10.9pt
 geometry: margin=1in
 jobtitle: Statistics Student
 keywords: R Markdown, academic CV, template
@@ -31,17 +31,21 @@ knitr::opts_chunk$set(echo = TRUE)
 **EDUCATION**  
 
 *Miami University* Oxford, OH \hfill Graduating May 2019  
-B.S. in Mathematics & Statistics, Predictive Analytics.  
-Minors in Computer Science and Operations Research.
+B.S. in Mathematics & Statistics, Co-major in Predictive Analytics.  
+Minor in Computer Science.
 
 *Statistics Courses*  
-Introduction to Statistical Modeling, Probability, Regression Analysis, Statistical Programming, Statistical Learning, Data Visualization, Inferential Statistics, Time Series
+Statistical Modeling, Probability, Regression Analysis, Statistical Programming, Statistical Learning, Data Visualization, Inferential Statistics, Time Series, Bayesian Statistics, Statistical Consulting.
 
 *Mathematics Courses*  
-Linear Algebra, Calculus 1-3, Differential Equations, Abstract Algebra, Real Analysis, Numerical Analysis, Optimization
+Calculus 1-3, Linear Algebra, Differential Equations, Abstract Algebra, Real Analysis, Numerical Analysis, Optimization.
 
 *Computer Science Courses*  
-Object Oriented Programming, Data Structures, Database Systems, Algorithms
+Data Structures, Database Systems, Algorithms, Artificial Intelligence.
+
+GPA *All Undergraduate and Graduate Courses:* 3.9
+
+GPA *Mathematics and Statsitics Courses;* 3.86
 
 ***
 
@@ -50,31 +54,41 @@ Object Oriented Programming, Data Structures, Database Systems, Algorithms
 
 *Cincinnati Children's Hospital* Department of Biostatistics and Epidemiology \hfill May 2018-Present
 
-- Cincinnati Childhood Allergy and Air Pollution Study (CCAAPS)
-
-    + Compared the effectiveness and efficiency of Voronoi diagrams vs. square rasters in interpolating Random Forest predictions over the Greater Cincinnati area
-
 - Pediatric Obesity Weight Evaluation Registry (POWER)
 
     + Aggregated and visualized quarterly data on the progess of Pediatric Obesity patients at 30+ hospitals in the US
 
     + Working to evaluate the effect of latitude on Vitamin D deficiencies in Pediatric Obesity patients
     
+- Cincinnati Childhood Allergy and Air Pollution Study (CCAAPS)
+
+    + Compared the effectiveness and efficiency of Voronoi diagrams vs. square rasters in interpolating Land Use Random Forest predictions over the Greater Cincinnati area
+    
 *IBM* Research Triangle Park, NC \hfill May 2017-May 2018  
 
-- Integrated cognitive tools such as Watson Machine Learning, SPSS modeler, and R into blockchain networks in order to provide real-time analysis to users
+- Integrated cognitive tools including Watson Machine Learning, SPSS modeler, and R into blockchain networks in order to provide real-time analysis to users
 
-*Undergraduate Associate* Miami University \hfill January 2018-May 2018
+*Miami University* Undergraduate Associate \hfill January 2018-Present
+
+As part of the Undergraduate Associate program, I have assisted the following professors with teaching statistical methods and programming languages as well as holding office hours:
 
 - STA 467: Statistical Learning *Dr. Karsten Maurer*
 
-    + Held office hours to help guide the term project (predicting basketball statistics using various ensembles of machine learning algorithms in R)
+- STA 462: Inferrential Statistics *Dr. Tatjana Miljkovic*
+
+- STA 363: Intro to Statistical Modeling *Michael R. Hughes*
 
 \newpage
 
 **RESEARCH EXPERIENCE**
 
 *Government Section on Statistics Data Challenge* American Statistical Association
+
+- 2018 Joint Statistical Meetings, *Co-author on Second Place team*
+
+    + Created tools for the second place-winning Miami University team to visualize errors associated with interpolating weather forecasts across the continental United States
+    
+    + Presented my own data-centric model for evaluating error in weather forecasts, which did not place in the competitin
 
 - 2017 Joint Statistical Meetings, *Presenter and Third Place winner*
 
@@ -116,4 +130,14 @@ Garrett, R. C., Nar, A., Fisher, T. J.. 2018.  ggvoronoi: Voronoi Diagrams and H
 
 **AWARDS AND HONORS**
 
-University Academic Scholars Program (2015-2018), Dr. Donald C Weber Memorial Scholarship (2017 and 2018), Eric E Erickson Memorial Scholarship (2018), EY scholarship (2017), President's List (Fall 16, Spring 17, Fall 17), Dean's List (Fall 15, Spring 16, Spring 18)
+University Academic Scholars Program, Mathematics and Statistics Division (2015-2018)
+
+Dr. Donald C Weber Memorial Scholarship (2017 and 2018)
+
+Eric E Erickson Memorial Scholarship (2018)
+
+EY scholarship (2017)
+
+President's List (Fall 16, Spring 17, Fall 17)
+
+Dean's List (Fall 15, Spring 16, Spring 18)
