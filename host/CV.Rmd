@@ -62,7 +62,7 @@ GPA *Mathematics and Statsitics Courses;* 3.86
     
 - Cincinnati Childhood Allergy and Air Pollution Study (CCAAPS)
 
-    + Compared the effectiveness and efficiency of Voronoi diagrams vs. square rasters in interpolating Land Use Random Forest predictions over the Greater Cincinnati area
+    + Working to compare the effectiveness and efficiency of Voronoi diagrams vs. square rasters in interpolating Land Use Random Forest predictions over the Greater Cincinnati area
     
 *IBM* Research Triangle Park, NC \hfill May 2017-May 2018  
 
