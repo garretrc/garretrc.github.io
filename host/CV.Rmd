@@ -31,21 +31,21 @@ knitr::opts_chunk$set(echo = TRUE)
 **EDUCATION**  
 
 *Miami University* Oxford, OH \hfill Graduating May 2019  
-B.S. in Mathematics & Statistics, Co-major in Predictive Analytics.  
-Minor in Computer Science.
+B.S. in Mathematics & Statistics, Co-major in Predictive Analytics   
+Minor in Computer Science
 
 *Statistics Courses*  
-Statistical Modeling, Probability, Regression Analysis, Statistical Programming, Statistical Learning, Data Visualization, Inferential Statistics, Time Series, Bayesian Statistics, Statistical Consulting.
+Statistical Modeling, Probability, Regression Analysis, Statistical Programming, Statistical Learning, Data Visualization, Inferential Statistics, Time Series, Bayesian Statistics, Statistical Consulting
 
 *Mathematics Courses*  
-Calculus 1-3, Linear Algebra, Differential Equations, Abstract Algebra, Real Analysis, Numerical Analysis, Optimization.
+Calculus 1-3, Linear Algebra, Differential Equations, Abstract Algebra, Real Analysis, Numerical Analysis, Optimization
 
 *Computer Science Courses*  
-Data Structures, Database Systems, Algorithms, Artificial Intelligence.
+Data Structures, Database Systems, Algorithms, Artificial Intelligence
 
 GPA *All Undergraduate and Graduate Courses:* 3.9
 
-GPA *Mathematics and Statsitics Courses;* 3.86
+GPA *Mathematics and Statsitics Courses:* 3.86
 
 ***
 
