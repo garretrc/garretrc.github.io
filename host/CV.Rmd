@@ -124,7 +124,8 @@ Garrett, R. C. and Fisher, T. J.. 2017. An Analysis of Consumer Budgeting and th
 
 **R packages**
 
-Garrett, R. C., Nar, A., Fisher, T. J.. 2018.  ggvoronoi: Voronoi Diagrams and Heatmaps with 'ggplot2'. R package
+Robert C. Garrett, Austin Nar, Thomas J. Fisher, Karsten Maurer. 2018.  ggvoronoi: Voronoi Diagrams and Heatmaps with 'ggplot2'. R package version 0.8.1.
+https://CRAN.R-project.org/package=ggvoronoi
 
 ***
 
