@@ -6,6 +6,7 @@
 install.packages("ggmap")
 install.packages("ggvoronoi")
 install.packages("gridExtra")
+install.packages("sp")
 
 library(ggmap)
 library(ggvoronoi)
@@ -41,8 +42,7 @@ base+
 #As our model, consider the value of the closest point:
 base +
   geom_point(aes(x,y,color=distance))+
-  geom_path(aes(x,y),stat="voronoi")+
-  coord_fixed()
+  geom_path(aes(x,y),stat="voronoi")
 
 #Now that we have nearest neighbor regions, all we need to do is fill them in with the corresponding color!
 base +
@@ -59,7 +59,7 @@ base +
   scale_fill_gradient(low="#510013",high="#ff2a5c",guide=F)+
   theme_void()
 
-#As you can wee, anything you've learned in ggplot2 can be applied to geom_voronoi
+#As you can see, anything you've learned in ggplot2 can be applied to geom_voronoi
 
 #Where could the nearest neighbor diagram be useful?
 
@@ -164,10 +164,6 @@ map+
 map+
   geom_point(color="blue")+
   geom_path(stat="voronoi",alpha=.4)
-
-ggplot(oxford_bikes)+
-  geom_path(aes(x=x,y=y),stat="voronoi")+
-  geom_point(data=oxford_bikes,aes(x=x,y=y))
 
 #Now how do we use this to find nearest neighbors?
 #Well, first we want to build the diagram as a spatial object within R
