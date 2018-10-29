@@ -88,7 +88,7 @@ As part of the Undergraduate Associate program, I have assisted the following pr
 
     + Created tools for the second place-winning Miami University team to visualize errors associated with interpolating weather forecasts across the continental United States
     
-    + Presented my own data-centric model for evaluating error in weather forecasts, which did not place in the competitin
+    + Presented my own data-centric model for evaluating error in weather forecasts, which did not place in the competition
 
 - 2017 Joint Statistical Meetings, *Presenter and Third Place winner*
 

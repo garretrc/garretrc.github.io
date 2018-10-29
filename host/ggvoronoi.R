@@ -2,6 +2,8 @@
 #Robert Garrett
 #October 24th, 2018
 
+#Download this script: http://garretrc.github.io/ggvoronoi.R
+
 #### Setup ####
 install.packages("ggmap")
 install.packages("ggvoronoi")
@@ -33,6 +35,8 @@ circle <- data.frame(x = 100*(1+cos(seq(0, 2*pi, length.out = 2500))),
 
 #Here is our set of points! Theres a lot of blank space in the plot
 base = ggplot(points) + coord_fixed()
+
+base
 
 base+
   geom_point(aes(x,y,color=distance))
@@ -154,6 +158,8 @@ map <- ggmap(oxford_map,base_layer = ggplot(data=oxford_bikes,aes(x=x,y=y))) +
     theme(axis.text=element_blank(),
           axis.title=element_blank())
 
+map
+
 #Now show a scatter plot of bike rack locations
 map+
   geom_point(color="blue")+
@@ -187,3 +193,46 @@ map +
   geom_point(data=data.frame(mac_joes),aes(long,lat),color="red",size=4) +
   geom_point(size=3,stroke=1, shape=21,color="black",fill="white") +
   geom_point(data=mac_joes %over% ox_diagram,aes(x,y),color="blue",size=5)
+
+
+#### Lake Superior Buoys ####
+library(rgdal)
+library(rgeos)
+
+superior = readOGR("C:/Users/garretrc/Downloads/shp_water_lake_superior_basin")
+
+superior = sp::spTransform(superior, CRS("+proj=longlat +datum=WGS84"))
+
+ggplot()+
+  geom_path(aes(long,lat,group=group),data=superior)
+
+
+superior_map <- get_googlemap(center = c(-88.2,47.7),
+                              zoom = 7,key="AIzaSyBWqYmcoGtgogsGOi50-gVEMNUNlXJ7RNg",
+                              size = c(640,360),scale=2)
+
+lake = ggmap(superior_map)+
+  theme_minimal() +
+  theme(axis.text=element_blank(),
+        axis.title=element_blank())
+
+lake  
+
+lake +
+  geom_path(aes(long,lat,group=group),data=superior)
+
+ndbc = read.csv("C:/Users/garretrc/Downloads/ndbc.csv")
+
+ndbc = SpatialPoints(ndbc[,c(2,3)],bbox=bbox(superior),CRS("+proj=longlat +datum=WGS84"))
+#ndbc = gIntersection(ndbc,superior)
+
+ndbc = data.frame(ndbc)
+
+ndbc = data.frame(long=ndbc[,1],lat=ndbc[,2])
+ndbc=unique(ndbc)
+
+lake+
+  geom_path(data=ndbc,aes(long,lat),outline=superior,stat="voronoi")+
+  geom_point(data=ndbc,aes(long,lat),color="red",size=3)
+
+
