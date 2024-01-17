@@ -1,6 +1,6 @@
 ---
 title: "Robert Garrett"
-author: "Statistics Student and Data Science Intern"
+author: "Statistician and Ph.D. Candidate"
 ---
 <style type="text/css">
 body {
@@ -15,10 +15,11 @@ h1.title {
 </style>
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-setwd("C:/Users/garretrc/garretrc")
+setwd("/mnt/c/users/rcg4/garretrc.github.io")
 ```
- <img src="https://garretrc.github.io/images/linkedin.jpg" width="160" height="160" border="5" alt="Picture of Robert" />
- <img src="https://garretrc.github.io/images/show.jpg" width="225" border="5" alt="Picture of DataScrubs" />
+ <img src="https://garretrc.github.io/images/head.jpg" width="160" height="160" border="5" alt="Picture of Robert" />
+ <img src="https://garretrc.github.io/images/anovalong.jpg" width="450" border="5" alt="Picture of Anova One Bites the Dust" />
+  <img src="https://garretrc.github.io/images/linkedin2.jpg" width="160" height="160" border="5" alt="Picture of Robert" />
  <img src="https://garretrc.github.io/images/bike.jpg" width="160" height="160" border="5" alt="Picture of Bike + Robert" />
 
 ## <span style="color:#B93838">About me</span>
